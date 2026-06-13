@@ -213,3 +213,10 @@ app_license = "MIT"
 # auth_hooks = [
 # 	"tickets.auth.validate"
 # ]
+
+
+fixtures = [
+    {"dt": "Custom Field", "filters": [["module", "=", "Tickets"]]},
+    {"dt": "Role", "filters": [["name", "=", "IT Support"]]},
+    {"dt": "Workflow", "filters": [["name", "=", "Ticket Workflow"]]},
+]
