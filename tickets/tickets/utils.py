@@ -1,5 +1,5 @@
 import frappe
-from frappe.model.workflow import apply_workflow
+# from frappe.model.workflow import apply_workflow
 
 def new_employee_ticket(doc, method=None):
     ticket = frappe.get_doc(
@@ -12,7 +12,5 @@ def new_employee_ticket(doc, method=None):
     )
     ticket.flags.ignore_validate = True
     ticket.insert(ignore_permissions=True)
-    apply_workflow(ticket, "Open")
-
-    
+    # apply_workflow(ticket, "Open")
     

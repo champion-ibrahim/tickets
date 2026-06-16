@@ -19,5 +19,5 @@ class Ticket(Document):
 		open_tickets = frappe.db.count(
 			"Ticket", {"owner": frappe.session.user, "workflow_state": "Open"}
 		)
-		if open_tickets > 3:
+		if open_tickets >= 3 and self.workflow_state in ["Open", "Draft", "", None]:
 			frappe.throw("You can not raise a ticket <br>You have 3 Open tickets")
